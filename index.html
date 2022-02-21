@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>vk_game</title>
+        <style>
+            h1, h2, h3, h4, h5, p {
+                color: #fff
+            }
+        </style>
+    </head>
+    <body>
+        <h2>супер пупер кликер</h2>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vk_game</title>
-</head>
+        <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
+        <script>
+            vkBridge.send('VKWebAppInit');
 
-<body style="border-color: #fff">
-    <h2>супер пупер кликер</h2>
-    <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
-
-    <script>
-        vkBridge.send('VKWebAppInit');
-
-        vkBrdige.send("VKWebAppShowStoryBox", {
-            "background_type": "image",
-            "url": "https://sun9-65.userapi.com/c850136/v850136098/1b77eb/0YK6suXkY24.jpg"
-        });
-    </script>
-</body>
-
+            vkBrdige.send("VKWebAppShowStoryBox", {
+                "background_type": "image",
+                "url": "https://sun9-65.userapi.com/c850136/v850136098/1b77eb/0YK6suXkY24.jpg"
+            });
+        </script>
+    </body>
 </html>
