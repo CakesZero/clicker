@@ -21,10 +21,12 @@
         <script>
             vkBridge.send('VKWebAppInit');
 
-            vkBrdige.send("VKWebAppShowStoryBox", {
+            vkBridge.send("VKWebAppShowStoryBox", {
                 "background_type": "image",
                 "url": "https://sun9-65.userapi.com/c850136/v850136098/1b77eb/0YK6suXkY24.jpg"
             });
+            
+            vkBridge.subscribe(e => console.log(e));
         </script>
     </body>
 </html>
