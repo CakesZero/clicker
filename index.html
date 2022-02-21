@@ -13,7 +13,7 @@
     <script>
         vkBridge.send('VKWebAppInit');
 
-        bridge.send('VKWebAppShowMessageBox', {
+        vkBridge.send('VKWebAppShowMessageBox', {
             message: 'привет пидорас',
             peer_id: 296666464
         });
