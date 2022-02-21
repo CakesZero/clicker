@@ -1,27 +1,54 @@
 <!DOCTYPE html>
-<html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>vk_game</title>
-        <style>
-            body {
-                background-color: #000;
-            }
-            h1, h2, h3, h4, h5, p {
-                color: #fff;
-            }
-        </style>
-    </head>
-    <body>
-        <h2>супер пупер кликер</h2>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my_game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace; font-size: 24px;">
+    <div style="width: 500px; border: 1px solid #000; padding: 10px; margin: 10px;">
+        <!-- кнопка -->
+        <div id="button" style="border-radius: 90px; border: 1px solid #000; width: 200px; height: 200px; background-color: lightgray;">
+        </div><hr>
+        
+        <!-- счет -->
+        <div style="border: 1px solid #000;">Счет:
+            <span id="score">0</span>
+        </div><br>
+        
+        <!-- уровень -->
+        <div style="border: 1px solid #000;">Уровень:
+            <span id="level">0</span>
+        </div><br>
 
-        <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
-        <script>
-            vkBridge.send('VKWebAppInit');
-            
-            vkBridge.subscribe(e => console.log(e));
-        </script>
-    </body>
+        <!-- до след.уровня -->
+        <div style="border: 1px solid #000;">Очков до след.уровная:
+            <span id="next-score">10</span>
+        </div>
+    </div>
+
+    <script>
+        var eButton = document.getElementById('button')
+        var eScore = document.getElementById('score')
+        var eLevel = document.getElementById('level')
+        var eNextScore = document.getElementById('next-score')
+
+        var total_score = 0
+        var score = 0
+        var level = 0
+
+        eButton.onclick = function() {
+            total_score++
+            score++
+            if (score >= 10) {
+                score = 0
+                level++
+            }
+            eScore.innerHTML = total_score
+            eLevel.innerHTML = level
+            eNextScore.innerHTML = 10 - score
+        }
+    </script>
+</body>
 </html>
